@@ -32,7 +32,7 @@ export default function Intro() {
               👋
             </motion.span>
         </motion.div>
-
+        <p></p>
       </section>
     </div>
   );
