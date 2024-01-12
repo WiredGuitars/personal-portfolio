@@ -15,6 +15,7 @@ import { SiExpress, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
+import { FiFramer } from "react-icons/fi";
 export default function Technologies() {
   return (
     <section>
@@ -76,6 +77,10 @@ export default function Technologies() {
               <div className="flex flex-col items-center m-1">
                 <TbBrandNextjs className="text-green-500 text-2xl" />
                 <span className="text-white mb-4">Next.js</span>
+              </div>
+              <div className="flex flex-col items-center m-1">
+                <FiFramer className="text-green-500 text-2xl" />
+                <span className="text-white mb-4">Framer</span>
               </div>
             </div>
           </div>
