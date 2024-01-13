@@ -12,7 +12,7 @@ import {
   FaSass,
 } from "react-icons/fa";
 import { SiExpress, SiTailwindcss, SiTypescript } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
+import { TbBrandNextjs, TbBrandOauth } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
 import { FiFramer } from "react-icons/fi";
@@ -30,8 +30,8 @@ export default function Technologies() {
       </SectionHeading>
       <motion.section
         className="flex "
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <motion.div className="flex gap-4 grid-cols-3">
           <div className="bg-black p-4 grid grid-rows-4 text-center rounded-lg ">
@@ -90,7 +90,7 @@ export default function Technologies() {
               Backend
             </div>
 
-            <div className="row-span-3 gap-2 grid grid-cols-1">
+            <div className="row-span-3 gap-4 grid grid-cols-1">
               <div className="flex-col flex items-center">
                 <SiExpress className="text-yellow-500 text-2xl" />
                 <span className="text-white">Express</span>
@@ -101,7 +101,11 @@ export default function Technologies() {
               </div>
               <div className="flex-col flex items-center">
                 <FaNode className="text-green-500 text-2xl" />
-                <span className="text-white">Node</span>
+                <span className="text-white">Node/npm</span>
+              </div>
+              <div className="flex-col flex items-center">
+                <TbBrandOauth className="text-yellow-500 text-2xl" />
+                <span className="text-white">Oauth</span>
               </div>
             </div>
 
