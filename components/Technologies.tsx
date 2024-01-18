@@ -11,7 +11,13 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
-import { SiExpress, SiTailwindcss, SiTypescript } from "react-icons/si";
+import {
+  SiExpress,
+  SiPug,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 import { TbBrandNextjs, TbBrandOauth } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
@@ -33,17 +39,20 @@ export default function Technologies() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <motion.div className="flex gap-4 grid-cols-3">
-          <div className="bg-black p-4 grid grid-rows-4 text-center rounded-lg ">
+        <motion.div className="flex gap-4 grid-cols-2">
+          <div className="bg-black p-4 grid grid-rows-5 text-center rounded-lg ">
             <div className="text-white flex mb-6 row-span-1 text-2xl items-center justify-center border-b-8 border-yellow-100">
               Frontend
             </div>
-            <div className="row-span-3 grid grid-cols-1 sm:grid-cols-2">
+            <div className="row-span-4 grid grid-cols-1 sm:grid-cols-2">
               <div className="flex flex-col items-center m-1">
                 <FaReact className="text-blue-500 text-2xl" />
                 <div className="text-white">React.js</div>
               </div>
-
+              <div className="flex flex-col items-center m-1">
+                <SiVite className="text-purple-500 text-2xl" />
+                <span className="text-white">Vite</span>
+              </div>
               <div className="flex flex-col items-center m-1">
                 <SiTypescript className="text-blue-500 text-2xl" />
                 <span className="text-white mb-4">TypeScript</span>
@@ -82,6 +91,10 @@ export default function Technologies() {
                 <FiFramer className="text-green-500 text-2xl" />
                 <span className="text-white mb-4">Framer</span>
               </div>
+              <div className="flex flex-col items-center m-1">
+                <SiPug className="text-red-500 text-2xl" />
+                <span className="text-white">Pug.js</span>
+              </div>
             </div>
           </div>
 
@@ -101,7 +114,7 @@ export default function Technologies() {
               </div>
               <div className="flex-col flex items-center">
                 <FaNode className="text-green-500 text-2xl" />
-                <span className="text-white">Node/npm</span>
+                <span className="text-white">Node.js/npm</span>
               </div>
               <div className="flex-col flex items-center">
                 <TbBrandOauth className="text-yellow-500 text-2xl" />
