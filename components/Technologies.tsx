@@ -39,59 +39,59 @@ export default function Technologies() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <motion.div className="flex gap-4 grid-cols-2">
+        <motion.div className="flex gap-4">
           <div className="bg-black p-4 grid grid-rows-5 text-center rounded-lg ">
-            <div className="text-white flex mb-6 row-span-1 text-2xl items-center justify-center border-b-8 border-yellow-100">
+            <div className="text-white flex mb-4 row-span-1 text-2xl items-center justify-center border-b-8 border-yellow-100">
               Frontend
             </div>
-            <div className="row-span-4 grid grid-cols-1 sm:grid-cols-2">
-              <div className="flex flex-col items-center m-1">
+            <div className="row-span-4 grid grid-cols-1 gap-2 sm:grid-cols-2 pt-2  text-center ">
+              <div className="flex flex-col items-center ">
                 <FaReact className="text-blue-500 text-2xl" />
                 <div className="text-white">React.js</div>
               </div>
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <SiVite className="text-purple-500 text-2xl" />
                 <span className="text-white">Vite</span>
               </div>
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <SiTypescript className="text-blue-500 text-2xl" />
                 <span className="text-white mb-4">TypeScript</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <IoLogoJavascript className="text-yellow-500 text-2xl" />
                 <span className="text-white mb-4">JavaScript</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center">
                 <FaHtml5 className="text-orange-500 text-2xl" />
                 <span className="text-white mb-4">HTML</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <FaCss3Alt className="text-blue-500 text-2xl" />
                 <span className="text-white mb-4">CSS</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <FaSass className="text-pink-500 text-2xl" />
                 <span className="text-white mb-4">Sass</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center">
                 <SiTailwindcss className="text-blue-500 text-2xl" />
                 <span className="text-white mb-4">Tailwind.css</span>
               </div>
 
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <TbBrandNextjs className="text-green-500 text-2xl" />
                 <span className="text-white mb-4">Next.js</span>
               </div>
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <FiFramer className="text-green-500 text-2xl" />
                 <span className="text-white mb-4">Framer</span>
               </div>
-              <div className="flex flex-col items-center m-1">
+              <div className="flex flex-col items-center ">
                 <SiPug className="text-red-500 text-2xl" />
                 <span className="text-white">Pug.js</span>
               </div>
