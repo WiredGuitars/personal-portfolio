@@ -22,7 +22,17 @@ import { TbBrandNextjs, TbBrandOauth } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
 import { FiFramer } from "react-icons/fi";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 export default function Technologies() {
+  const { ref, inView } = useInView();
+  const { setActiveSection } = useActiveSectionContext;
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("About");
+    }
+  } [inView, setActiveSection]);
   return (
     <section>
       <SectionHeading>
@@ -31,6 +41,7 @@ export default function Technologies() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           id="technologies"
+          ref={ref}
         >
           Technologies
         </motion.div>

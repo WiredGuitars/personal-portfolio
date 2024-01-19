@@ -35,7 +35,7 @@ export default function Project({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Empty dependency array to run the effect only on mount and unmount
+  }, []);
 
   const handleTap = () => {
     if (window.innerWidth <= 640) {
@@ -50,13 +50,13 @@ export default function Project({
         scale: scaleProgress,
         opacity: opacityProgress,
       }}
-      className="group sm:mb-8"
+      className=" sm:mb-8 group"
     >
       <section
         onClick={handleTap}
         className={`relative ${
           isTapped ? "bg-slate-900 text-white" : ""
-        }sm:bg-gray-100  max-w-[65rem] border min-h-[44rem] sm:min-h-[18rem] border-black/5 overflow-hidden relative flex mb-3  last:mb-1 transition sm:hover:bg-gray-200 `}
+        }sm:bg-gray-100  max-w-[65rem] border min-h-[44rem] sm:min-h-[18rem] border-black/5 overflow-hidden flex mb-3  last:mb-1 transition sm:hover:bg-gray-200 `}
       >
         <div className="py-2 px-5 sm:pr-2 sm:pt-5 sm:max-w-[50%] sm:group-even:ml-[32rem] flex flex-col h-full">
           <h3 className="text-2xl font-semibold">{title}</h3>
