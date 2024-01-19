@@ -1,5 +1,5 @@
 import Intro from "@/components/Intro";
-import Projects from "@/components/Projects";
+import ProjectSection from "@/components/ProjectSection";
 import SectionDivider from "@/components/SectionDivider";
 import Technologies from "@/components/Technologies";
 
@@ -9,7 +9,7 @@ export default function Home() {
       <Intro />
       <SectionDivider />
       <Technologies />
-      <Projects />
+      <ProjectSection />
     </main>
   );
 }

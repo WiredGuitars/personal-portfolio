@@ -27,9 +27,10 @@ export default function Technologies() {
     <section>
       <SectionHeading>
         <motion.div
-          className="text-center"
+          className="text-center scroll-mt-28"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
+          id="technologies"
         >
           Technologies
         </motion.div>

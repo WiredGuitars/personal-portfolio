@@ -9,11 +9,14 @@ import { HiDownload } from "react-icons/hi";
 
 export default function Intro() {
   return (
-    <section className="mb-20 max-w-[50rem] text-center">
+    <section
+      className="mb-5 max-w-[50rem] text-center scroll-mt-[100rem]"
+      id="home"
+    >
       <motion.div
         initial={{ rotate: -30, x: -50, y: -20, opacity: 0 }}
         animate={{ rotate: 0, x: 0, y: 0, opacity: 1 }}
-        transition={{ type: "spring", damping: 10, stiffness: 70, delay: 0.5 }}
+        transition={{ type: "spring", damping: 10, stiffness: 70, delay: 0.3 }}
         className="relative flex items-center justify-center"
       >
         <div className="relative">
@@ -31,7 +34,7 @@ export default function Intro() {
             animate={{
               rotate: [0, -10, 0, 10, 0],
               transition: {
-                duration: 1.5,
+                duration: 0.5,
                 repeat: Infinity,
                 repeatType: "loop",
               },
@@ -42,13 +45,22 @@ export default function Intro() {
         </div>
       </motion.div>
       <motion.p
-        className="mb-10 mt-4 px-4 test-2xl font-medium !leading-[1.5]"
-        initial={{ opacity: 0, x: 100 }}
+        className="mb-5 mt-4 px-4 test-2xl font-medium !leading-[1.5]"
+        initial={{ opacity: 0, x: 25 }}
         animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.3, duration: 0.7 }}
       >
         <span className="font-bold">Howdy, I'm Daniel!</span> I've been teaching
-        myself web-development since January, 2023. I'm a{" "}
-        <span className="font-bold">full-stack developer</span> trained
+        myself web-development since January, 2023, primarily through{" "}
+        <a
+          className="text-blue-300 hover:underline"
+          href="https://theodinproject.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          theodinproject.com
+        </a>
+        . I'm a <span className="font-bold">full-stack developer</span> trained
         primarily in the
         <span className="font-bold"> M.E.R.N.</span> stack. I'm passionate about
         learning, and my focus right now is{" "}
@@ -57,7 +69,6 @@ export default function Intro() {
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5 }}
         className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium"
       >
         <Link
