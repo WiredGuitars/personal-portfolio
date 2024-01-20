@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { DiMongodb } from "react-icons/di";
@@ -25,23 +25,24 @@ import { FiFramer } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 export default function Technologies() {
-  const { ref, inView } = useInView();
-  const { setActiveSection } = useActiveSectionContext;
+  const { ref, inView } = useInView({
+    threshold: 0.8,
+  });
+  const { setActiveSection } = useActiveSectionContext();
 
   useEffect(() => {
     if (inView) {
-      setActiveSection("About");
+      setActiveSection("Technologies");
     }
-  } [inView, setActiveSection]);
+  }, [inView, setActiveSection]);
   return (
-    <section>
+    <section ref={ref}>
       <SectionHeading>
         <motion.div
           className="text-center scroll-mt-28"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           id="technologies"
-          ref={ref}
         >
           Technologies
         </motion.div>

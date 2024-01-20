@@ -1,17 +1,31 @@
 "use client";
 
+import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
+import { useInView } from "react-intersection-observer";
 
 export default function Intro() {
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  });
+  const { setActiveSection } = useActiveSectionContext();
+
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Home");
+    }
+  }, [inView, setActiveSection]);
   return (
     <section
       className="mb-5 max-w-[50rem] text-center scroll-mt-[100rem]"
       id="home"
+      ref={ref}
     >
       <motion.div
         initial={{ rotate: -30, x: -50, y: -20, opacity: 0 }}
