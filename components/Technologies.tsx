@@ -22,19 +22,9 @@ import { TbBrandNextjs, TbBrandOauth } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoFirebase } from "react-icons/io5";
 import { FiFramer } from "react-icons/fi";
-import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "@/context/ActiveSectionContext";
+import { useSectionInView } from "@/lib/hooks";
 export default function Technologies() {
-  const { ref, inView } = useInView({
-    threshold: 0.8,
-  });
-  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
-
-  useEffect(() => {
-    if (inView && Date.now() - timeOfLastClick > 1000) {
-      setActiveSection("Technologies");
-    }
-  }, [inView, setActiveSection, timeOfLastClick]);
+  const { ref } = useSectionInView("Home", 0.8);
   return (
     <section ref={ref}>
       <SectionHeading>
