@@ -24,7 +24,7 @@ import { IoLogoFirebase } from "react-icons/io5";
 import { FiFramer } from "react-icons/fi";
 import { useSectionInView } from "@/lib/hooks";
 export default function Technologies() {
-  const { ref } = useSectionInView("Home", 0.8);
+  const { ref } = useSectionInView("Technologies", 0.8);
   return (
     <section ref={ref}>
       <SectionHeading>
@@ -132,11 +132,11 @@ export default function Technologies() {
               <div className="row-span-3 grid grid-rows-2">
                 <div className="row-span-1 flex flex-col items-center justify-center">
                   <FaLinux className="text-blue-500 text-2xl m-1" />
-                  <span className="text-white">Linux</span>
+                  <div className="text-white">Linux</div>
                 </div>
                 <div className="row-span-1 flex flex-col items-center justify-center">
                   <IoLogoFirebase className="text-yellow-500 text-2xl m-1" />
-                  <span className="text-white">Firebase</span>
+                  <div className="text-white">Firebase</div>
                 </div>
               </div>
             </div>
