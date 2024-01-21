@@ -28,13 +28,13 @@ export default function Technologies() {
   const { ref, inView } = useInView({
     threshold: 0.8,
   });
-  const { setActiveSection } = useActiveSectionContext();
+  const { setActiveSection, timeOfLastClick } = useActiveSectionContext();
 
   useEffect(() => {
-    if (inView) {
+    if (inView && Date.now() - timeOfLastClick > 1000) {
       setActiveSection("Technologies");
     }
-  }, [inView, setActiveSection]);
+  }, [inView, setActiveSection, timeOfLastClick]);
   return (
     <section ref={ref}>
       <SectionHeading>
