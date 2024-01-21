@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { DiMongodb } from "react-icons/di";
@@ -87,7 +87,7 @@ export default function Technologies() {
               </div>
 
               <div className="flex flex-col items-center ">
-                <TbBrandNextjs className="text-green-500 text-2xl" />
+                <TbBrandNextjs className="text-white text-2xl" />
                 <span className="text-white mb-4">Next.js</span>
               </div>
               <div className="flex flex-col items-center ">
@@ -120,7 +120,7 @@ export default function Technologies() {
                 <span className="text-white">Node.js/npm</span>
               </div>
               <div className="flex-col flex items-center">
-                <TbBrandOauth className="text-yellow-500 text-2xl" />
+                <TbBrandOauth className="text-white text-2xl" />
                 <span className="text-white">Oauth</span>
               </div>
             </div>
