@@ -77,7 +77,7 @@ export default function Project({
         <div className="sm:hidden absolute bottom-2 right-12  text-center">
           Preview <br />→{" "}
         </div>
-        <div className="absolute invisible sm:visible flex self-center group  sm:group-odd:right-8">
+        <div className="absolute invisible sm:visible flex self-center group  sm:group-even:left-8 sm:group-odd:right-8">
           Hover Over Me!
         </div>
         <Image
