@@ -1,5 +1,6 @@
 "use client";
 
+import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -8,9 +9,9 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 
-export default function Intro() {
+export default function Hero() {
   const { ref } = useSectionInView("Home", 0.6);
-
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <section
       className="mb-5 max-w-[50rem] text-center scroll-mt-[100rem]"
@@ -78,6 +79,10 @@ export default function Intro() {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition shadow-md"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
@@ -85,20 +90,20 @@ export default function Intro() {
         <a
           href="/Daniel_Laschanzky.pdf"
           download={true}
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full  outline-none focus:scale-110 hover:scale-110  active:scale-105 transition shadow-md border border-black/10"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full  outline-none focus:scale-110 hover:scale-110  active:scale-105 transition shadow-md borderBlack"
         >
           Download CV{" "}
           <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
         </a>
         <a
           href="https://www.linkedin.com/in/daniellaschanzky/"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.15rem]  outline-none focus:scale-110 hover:scale-[1.15] active:scale-[1.05] transition shadow-md border border-black/10"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.15rem]  outline-none focus:scale-110 hover:scale-[1.15] active:scale-[1.05] transition shadow-md borderBlack"
         >
           <BsLinkedin />
         </a>
         <a
           href="https://github.com/WiredGuitars"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]  outline-none focus:scale-110   hover:scale-[1.15] active:scale-[1.05] transition shadow-md border border-black/10"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]  outline-none focus:scale-110   hover:scale-[1.15] active:scale-[1.05] transition shadow-md borderBlack"
         >
           <FaGithubSquare />
         </a>
