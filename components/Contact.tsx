@@ -25,7 +25,7 @@ export default function Contact() {
     >
       <SectionHeading>Contact Me</SectionHeading>
 
-      <p className="text-gray-700 text-sm -mt-6">
+      <p className="text-gray-700 text-sm -mt-6 dark:text-white/75">
         Contact me directly at{" "}
         <a className="underline" href="mailto:dlaschanzky2@huskers.unl.edu">
           dlaschanzky2@huskers.unl.edu
@@ -37,22 +37,29 @@ export default function Contact() {
         className="mt-10 flex flex-col"
         action={async (formData) => {
           try {
-            const result = await sendEmail(formData);
+            const { data, error } = await sendEmail(formData);
 
-            if (result && result.error) {
-              toast.error(result.error);
+            if (error) {
+              toast.error; // Display the error message
               return;
             }
 
-            toast.success("Email sent successfully");
+            // Check if there's an error in the 'data' field
+            if (data && data.error) {
+              toast.error(data.error.message); // Display the error message from 'data'
+              return;
+            }
+
+            // No error, success
+            toast.success("Email sent successfully!");
           } catch (error) {
             console.error("Error sending email:", error);
-            toast.error("An error occurred while sending the email");
+            toast.error("An unexpected error occurred while sending the email");
           }
         }}
       >
         <input
-          className="h-14 rounded-lg px-4 border borderBlack"
+          className="h-14 rounded-lg px-4 border borderBlack dark:bg-white/10"
           placeholder="Your e-mail"
           type="email"
           required
@@ -60,7 +67,7 @@ export default function Contact() {
           maxLength={500}
         />
         <textarea
-          className="h-52 my-3 rounded-lg p-4 borderBlack"
+          className="h-52 my-3 rounded-lg p-4 borderBlack dark:bg-white/10"
           placeholder="Your Message"
           required
           name="senderMessage"

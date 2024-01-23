@@ -56,17 +56,17 @@ export default function Project({
         onClick={handleTap}
         className={`relative ${
           isTapped ? "bg-slate-900 text-white" : ""
-        }sm:bg-gray-100  max-w-[65rem] border min-h-[44rem] sm:min-h-[18rem] borderBlack overflow-hidden flex mb-3  last:mb-1 transition sm:hover:bg-gray-200 `}
+        }sm:bg-gray-100  max-w-[65rem] border min-h-[44rem] sm:min-h-[18rem] borderBlack overflow-hidden flex mb-3  last:mb-1 transition sm:hover:bg-gray-200 dark:bg-white/10 dark:hover:bg-white/20 dark:text-white`}
       >
         <div className="py-2 px-5 sm:pr-2 sm:pt-5 sm:max-w-[50%] sm:group-even:ml-[34rem] flex flex-col h-full">
           <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 h-auto w-[90%] leading-relaxed text-gray-700">
+          <p className="mt-2 dark:text-white/70 h-auto w-[90%] leading-relaxed text-gray-700">
             {description}
           </p>
           <ul className="flex flex-wrap max-w-[60%] sm:max-w-[100%] mt-4 gap-2">
             {tags.map((tag, index) => (
               <li
-                className="bg-black/[.3] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white max-w-[75%] rounded-full"
+                className="bg-black/[.3] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white max-w-[75%] dark:text-white/70 rounded-full"
                 key={index}
               >
                 {tag}
