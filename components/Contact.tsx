@@ -36,13 +36,19 @@ export default function Contact() {
       <form
         className="mt-10 flex flex-col"
         action={async (formData) => {
-          const { error } = await sendEmail(formData);
+          try {
+            const result = await sendEmail(formData);
 
-          if (error) {
-            toast.error(error);
-            return;
+            if (result && result.error) {
+              toast.error(result.error);
+              return;
+            }
+
+            toast.success("Email sent successfully");
+          } catch (error) {
+            console.error("Error sending email:", error);
+            toast.error("An error occurred while sending the email");
           }
-          toast.success("Email sent successfully");
         }}
       >
         <input
