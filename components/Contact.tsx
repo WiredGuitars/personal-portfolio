@@ -40,13 +40,12 @@ export default function Contact() {
             const { data, error } = await sendEmail(formData);
 
             if (error) {
-              toast.error; // Display the error message
+              toast.error;
               return;
             }
 
-            // Check if there's an error in the 'data' field
             if (data && data.error) {
-              toast.error(data.error.message); // Display the error message from 'data'
+              toast.error(data.error.message);
               return;
             }
 
