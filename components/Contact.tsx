@@ -6,16 +6,21 @@ import { useSectionInView } from "@/lib/hooks";
 import SubmitButton from "./SubmitButton";
 import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
+import { sendEmail } from "@/lib/utils";
+
+export type FormData = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.6);
+  const { register, handleSubmit } = useForm<FormData>();
 
-  const Contact: FC = () => {
-    const { register, handleSubmit } = useForm<FormData>();
-
-    function onSubmit(data: FormData) {
-      sendEmail(data);
-    }
-  };
+  function onSubmit(data: FormData) {
+    sendEmail(data);
+  }
   return (
     <motion.section
       id="contact"
@@ -41,7 +46,7 @@ export default function Contact() {
         or through the form below
       </p>
 
-      <form className="mt-10 flex flex-col">
+      <form className="mt-10 flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="h-14 rounded-lg px-4 border borderBlack dark:bg-white/10"
           placeholder="Your e-mail"
