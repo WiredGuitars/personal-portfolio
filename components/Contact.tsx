@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { sendEmail } from "@/lib/utils";
 
 export type FormData = {
-  name: string;
   email: string;
   message: string;
 };
@@ -52,15 +51,16 @@ export default function Contact() {
           placeholder="Your e-mail"
           type="email"
           required
-          name="senderEmail"
           maxLength={500}
+          {...register("email")}
+          autoComplete="off"
         />
         <textarea
           className="h-52 my-3 rounded-lg p-4 borderBlack dark:bg-white/10"
           placeholder="Your Message"
           required
-          name="senderMessage"
           maxLength={5000}
+          {...register("message")}
         />
         <SubmitButton />
       </form>

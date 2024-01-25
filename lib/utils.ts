@@ -29,12 +29,15 @@ return message
 
 export async function sendEmail(data: FormData) {
     const apiEndpoint = '/api/email';
+    console.log(data)
   
     try {
       const response = await fetch(apiEndpoint, {
         method: 'POST',
         body: JSON.stringify(data),
+
       });
+      
   
       if (!response.ok) {
         // Handle non-successful responses
