@@ -5,7 +5,6 @@ import Mail from "nodemailer/lib/mailer";
 export async function POST(request: NextRequest) {
   console.log(request);
   const { email, message } = await request.json();
-  
   console.log(email, message);
   const transport = nodemailer.createTransport({
     service: "gmail",
@@ -21,9 +20,14 @@ export async function POST(request: NextRequest) {
     from: process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,
     subject: `Message from ${email}`,
-    text: message,
+    html: `<div style="font-family: Arial, sans-serif; max-width: 600px;">
+            <p style="font-size: 16px; color: #333;">You received the following message from the contact form:</p>
+            <p style="font-size: 14px; color: #666;">${message}</p>
+            <hr style="border: 1px solid #ddd;">
+            <p style="font-size: 14px; color: #777;">The sender's email is: ${email}</p>
+          </div>`,
   };
-
+  
   const sendMailPromise = () =>
     new Promise<string>((resolve, reject) => {
       transport.sendMail(mailOptions, function (err) {
