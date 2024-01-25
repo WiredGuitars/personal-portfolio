@@ -1,13 +1,21 @@
 "use client";
-import React from "react";
+import React, { FC } from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
 import SubmitButton from "./SubmitButton";
 import toast from "react-hot-toast";
+import { useForm } from "react-hook-form";
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.6);
+
+  const Contact: FC = () => {
+    const { register, handleSubmit } = useForm<FormData>();
+
+    function onSubmit(data: FormData) {
+      sendEmail(data);
+    }
+  };
   return (
     <motion.section
       id="contact"
@@ -33,30 +41,7 @@ export default function Contact() {
         or through the form below
       </p>
 
-      <form
-        className="mt-10 flex flex-col"
-        action={async (formData) => {
-          try {
-            const { data, error } = await sendEmail(formData);
-
-            if (error) {
-              toast.error;
-              return;
-            }
-
-            if (data && data.error) {
-              toast.error(data.error.message);
-              return;
-            }
-
-            // No error, success
-            toast.success("Email sent successfully!");
-          } catch (error) {
-            console.error("Error sending email:", error);
-            toast.error("An unexpected error occurred while sending the email");
-          }
-        }}
-      >
+      <form className="mt-10 flex flex-col">
         <input
           className="h-14 rounded-lg px-4 border borderBlack dark:bg-white/10"
           placeholder="Your e-mail"
