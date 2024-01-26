@@ -92,7 +92,7 @@ export default function Technologies() {
               </div>
               <div className="flex flex-col items-center ">
                 <FiFramer className="text-green-500 text-2xl" />
-                <span className="text-white mb-4">Framer</span>
+                <span className="text-white mb-4">Framer Motion</span>
               </div>
               <div className="flex flex-col items-center ">
                 <SiPug className="text-red-500 text-2xl" />
