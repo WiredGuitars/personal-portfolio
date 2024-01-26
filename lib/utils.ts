@@ -40,7 +40,6 @@ export async function sendEmail(data: FormData) {
       
   
       if (!response.ok) {
-        // Handle non-successful responses
         const errorData = await response.json();
         throw new Error(errorData.message || 'An error occurred');
       }
