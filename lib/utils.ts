@@ -1,5 +1,3 @@
-import { FormData } from "@/components/Contact"
-import toast from "react-hot-toast"
 
 export const validateString = (value:unknown, maxLength: number) => {
     if (!value || typeof value !== "string" || value.length > maxLength) {
@@ -27,27 +25,3 @@ export const getErrorMessage = (error: unknown): string => {
 return message
 }
 
-export async function sendEmail(data: FormData) {
-    const apiEndpoint = '/api/email';
-    console.log(data)
-  
-    try {
-      const response = await fetch(apiEndpoint, {
-        method: 'POST',
-        body: JSON.stringify(data),
-
-      });
-      
-  
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'An error occurred');
-      }
-  
-      const responseData = await response.json();
-      toast.success(responseData.message);
-    } catch (err) {
-      toast.error((err as Error).message || 'An error occurred');
-    }
-  }
-  

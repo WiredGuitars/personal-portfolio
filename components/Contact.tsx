@@ -1,13 +1,12 @@
 "use client";
-import React, { FC } from "react";
+import React from "react";
 import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitButton from "./SubmitButton";
-import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
-import { sendEmail } from "@/lib/utils";
-
+import sendEmail from "@/actions/sendEmail";
+import { useFormStatus } from "react-dom";
 export type FormData = {
   email: string;
   message: string;

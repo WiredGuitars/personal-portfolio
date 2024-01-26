@@ -4,7 +4,7 @@ import { FaPaperPlane } from "react-icons/fa";
 
 export default function SubmitButton() {
   const { pending } = useFormStatus();
-
+  console.log(pending);
   return (
     <button
       type="submit"
@@ -12,7 +12,9 @@ export default function SubmitButton() {
       disabled={pending}
     >
       {pending ? (
-        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
+        <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white">
+          Submitting
+        </div>
       ) : (
         <>
           Submit{" "}
