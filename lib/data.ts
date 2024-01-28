@@ -60,7 +60,7 @@ export const projectsData = [
   {
     title: "Library",
     description:
-      "A CRUD library I made where users can create and store books,authors, and genres in a database. It also keeps track of an individual book's current status (i.e. Available, reserved, loaned, needs maintenance). Creating this app challenged me to really think about the way my database stores data; an early version of this app saw unexpected bugs like data from the 'bookinstance' collection becoming orphaned related data from the 'book' collection was deleted before deleting the bookinstance associated with it first. ",
+      "A library app I made to demonstrate basic CRUD functions. Users can create and store books, authors, and genres in a database. It also keeps track of an individual book's current status (i.e. Available, reserved, loaned, needs maintenance). Has some basic built-in validation for data creation. Creating this app challenged me to really think about the way a NoSQL database PAAS like Mongo stores data; an early version of this app saw unexpected bugs like data from the 'bookinstance' collection becoming orphaned when related data from the 'book' collection was deleted before deleting the bookinstance associated with it first. ",
     tags: ["Express", "MongoDB", "Pug.JS", "Node.js"],
     imageUrl: locallibrary,
   },
