@@ -4,7 +4,7 @@ import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitButton from "./SubmitButton";
-import { useForm, useFormState } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import sendEmail from "@/actions/sendEmail";
 export type FormData = {
   email: string;
