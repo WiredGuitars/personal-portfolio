@@ -4,9 +4,8 @@ import SectionHeading from "./SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import SubmitButton from "./SubmitButton";
-import { useForm } from "react-hook-form";
+import { useForm, useFormState } from "react-hook-form";
 import sendEmail from "@/actions/sendEmail";
-import { useFormStatus } from "react-dom";
 export type FormData = {
   email: string;
   message: string;
@@ -14,11 +13,15 @@ export type FormData = {
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact", 0.6);
-  const { register, handleSubmit } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<FormData>();
+  const onSubmit = async (data: FormData) => {
+    await sendEmail(data);
+  };
 
-  function onSubmit(data: FormData) {
-    sendEmail(data);
-  }
   return (
     <motion.section
       id="contact"
@@ -50,8 +53,7 @@ export default function Contact() {
           placeholder="Your e-mail"
           type="email"
           required
-          maxLength={500}
-          {...register("email")}
+          {...register("email", { required: true, maxLength: 500 })}
           autoComplete="off"
         />
         <textarea
@@ -61,7 +63,7 @@ export default function Contact() {
           maxLength={5000}
           {...register("message")}
         />
-        <SubmitButton />
+        <SubmitButton isSubmitting={isSubmitting} />
       </form>
     </motion.section>
   );
